@@ -1,5 +1,6 @@
 ---
 title: Data analysis cookbook with Kotlin
+layout: default
 ---
 
 ### Introduction

@@ -1,5 +1,6 @@
 ---
-Baby steps
+title: Baby steps
+layout: default
 ---
 
 ### Documents, sentences and words
