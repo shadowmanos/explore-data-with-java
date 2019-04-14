@@ -1,6 +1,6 @@
 ---
 title: Baby steps
-description: Simplest NLP on text
+description: Simplest NLP tasks
 layout: default
 ---
 
@@ -16,7 +16,7 @@ to seek out new life and new civilizations,
 to boldly go where no one has gone before!""")
 ```
 
-The simplest processing we can do here is split it into [sentences](https://nlp.stanford.edu/nlp/javadoc/javanlp/index.html?edu/stanford/nlp/simple/Sentence.html). Note that it splits on punctuation like _'.'_ and _'!'_ if followed by a space and it retains the punctuation in the resulting sentences. It doesn't split on _','_ or _':'_. With CoreNLP we can usually extract either a list with the plural form of a method or get a specific element with the singular form and an index. Try:
+The simplest processing we can do here is split it into [sentences](https://nlp.stanford.edu/nlp/javadoc/javanlp/index.html?edu/stanford/nlp/simple/Sentence.html). Note that it splits on punctuation like '.' and '!' if followed by a space and it retains the punctuation in the resulting sentences. It doesn't split on ',' or ':'. With CoreNLP we can usually extract either a list with the plural form of a method or get a specific element with the singular form and an index. Try:
 
 ```kotlin
 text.sentences()
@@ -36,4 +36,8 @@ sentence.lemma(1)
 ### Parts of speech
 
 CoreNLP will do its best to guess whether a word is a verb, noun, adjective etc. That is a **P**art **O**f **S**peech tag and you can see a list of potential tags 
-at the [Penn tree bank](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). You loved grammar at school didn't you ?
+at the [Penn tree bank](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html). You loved grammar at school didn't you ? To get POS tags for all words in the second sentence:
+
+```kotlin
+sentence.posTags()
+```
