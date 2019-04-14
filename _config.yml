@@ -1,0 +1,15 @@
+theme: jekyll-theme-cayman
+title: Data analysis cookbook with Kotlin
+description: Bitesize data analysis examples using the Kotlin REPL
+author: Manos Nikolaidis
+twitter:
+  username: shadowmanos
+social:
+  name: Manos Nikolaidis
+  links:
+    - https://stackoverflow.com/users/1413133/manos-nikolaidis
+    - https://twitter.com/shadowmanos
+    - https://www.linkedin.com/in/manosnikolaidis
+gems:
+  - jekyll-seo-tag
+  - jekyll-sitemap
