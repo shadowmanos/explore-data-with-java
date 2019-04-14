@@ -1,5 +1,6 @@
 ---
 title: Data analysis cookbook with Kotlin
+description: Bitesize data analysis examples using the Kotlin REPL
 layout: default
 ---
 

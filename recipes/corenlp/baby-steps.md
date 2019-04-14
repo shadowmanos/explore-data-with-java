@@ -1,6 +1,7 @@
 ---
 title: Baby steps
-layout: post
+description: Simplest NLP on text
+layout: default
 ---
 
 ### Documents, sentences and words

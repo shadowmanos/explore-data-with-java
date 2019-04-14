@@ -1,6 +1,4 @@
 theme: jekyll-theme-cayman
-title: NLP Kotlin cookbook
-description: Natural Language Processing with Stanford CoreNLP and Kotlin REPL
 author: Manos Nikolaidis
 twitter:
   username: shadowmanos
