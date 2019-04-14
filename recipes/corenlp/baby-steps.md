@@ -1,6 +1,6 @@
 ---
 title: Baby steps
-layout: default
+layout: post
 ---
 
 ### Documents, sentences and words

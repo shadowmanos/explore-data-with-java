@@ -1,6 +1,6 @@
 ---
 title: NLP Kotlin cookbook
-layout: default
+layout: post
 ---
 
 Practical examples on English text analysis with [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) a Java Library for [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing).
