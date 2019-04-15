@@ -17,7 +17,7 @@ Then create a new "Project from version control", select git and put this URL
 
 `https://github.com/shadowmanos/kotlin-repl-data-cookbook.git`
 
-You'll need jdk 1.8 or later. After it's open and indexing is complete, go the project view on the left, highlight a module e.g._corenlp_ and choose from menu _Tools_ -> _Kotlin_ -> _Kotlin REPL_. Then start typing code from the examples in this cookbook and the necessary classes will be auto imported while typing. Tip: You may define a shortcut to bring up the REPL window.
+You'll need jdk 1.8 or later. After it's open and Intellij and gradle have done their thing, go the project view on the left, highlight the _main_ module in _src_ folder and choose from menu _Tools_ -> _Kotlin_ -> _Kotlin REPL_. Then start typing code from the examples in this cookbook and if you autocomplete the necessary classes will be auto imported while typing. Tip: You may define a shortcut to bring up the REPL window.
 
 
 ### Contents
