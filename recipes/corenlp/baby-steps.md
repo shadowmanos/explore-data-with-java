@@ -1,6 +1,7 @@
 ---
 title: Baby steps
 description: Simplest NLP tasks
+date: 2019-04-14 00:00:00
 layout: default
 ---
 

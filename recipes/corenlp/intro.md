@@ -1,6 +1,7 @@
 ---
 title: NLP Kotlin cookbook
 description: Natural Language Processing with Stanford CoreNLP and Kotlin REPL
+date: 2019-04-14 00:00:00
 layout: default
 ---
 

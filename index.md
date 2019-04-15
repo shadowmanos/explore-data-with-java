@@ -1,6 +1,7 @@
 ---
 title: Data analysis cookbook with Kotlin
 description: Bitesize data analysis examples using the Kotlin REPL
+date: 2019-04-14 00:00:00
 layout: default
 ---
 
