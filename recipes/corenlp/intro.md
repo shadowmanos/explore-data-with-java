@@ -5,7 +5,7 @@ date: 2019-04-14 00:00:00
 layout: default
 ---
 
-Practical examples on English text analysis with [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) a Java Library for [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing).
+Practical examples on English text analysis with [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) a Java Library for [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing). We'll use the [Simple API](https://stanfordnlp.github.io/CoreNLP/simple.html) that is more appropriate for a REPL due to simplicity. Language models will be lazy loaded whenever you type something that needs a model. 
 
 All text samples used for testing are Star Trek quotes (English not Klingon) sourced from either [Wikipedia](https://en.wikipedia.org/wiki/Star_Trek) or [Memory Alpha](http://memory-alpha.wikia.com/wiki/Portal:Main). After an entirely unscientific thought process, I decided such quotes are grammatically correct,
 adequately diverse and of average complexity.
