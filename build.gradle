@@ -1,5 +1,5 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.3.31'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.41'
 }
 
 group = 'io.github.shadowmanos'
@@ -12,7 +12,8 @@ repositories {
 
 dependencies {
     implementation 'org.slf4j:slf4j-simple:1.7.26'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.31'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.41'
+    implementation 'de.jollyday:jollyday:0.5.8'
     implementation 'edu.stanford.nlp:stanford-corenlp:3.9.2'
     implementation 'edu.stanford.nlp:stanford-corenlp:3.9.2:models'
 }
