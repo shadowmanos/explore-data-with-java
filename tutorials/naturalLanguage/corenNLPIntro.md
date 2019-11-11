@@ -1,13 +1,13 @@
 ---
-title: Baby steps
-description: Explore CoreNLP's Simple API
-date: 2019-08-01 00:00:00
+title: Play with Stanford CoreNLP's Simple API
+description: A look at English grammar if you don't have a universal translator
+date: 2019-10-01 00:00:00
 layout: default
 ---
 
 ### Documents, sentences and words
 
-Let's start by creating a [Document](https://nlp.stanford.edu/nlp/javadoc/javanlp/index.html?edu/stanford/nlp/simple/Document.html) with appropriate sample text for starting our journey. Note that this a multi-line string and we can type by hitting Enter and then Ctrl+Enter at the last line to execute.
+Let's start by creating a [Document](https://nlp.stanford.edu/nlp/javadoc/javanlp/index.html?edu/stanford/nlp/simple/Document.html) with appropriate sample text for starting our journey. Note that this a multi-line string, and we can type by hitting Enter and then Ctrl+Enter at the last line to execute.
 
 ```kotlin
 val text = Document("""Space: the final frontier.
@@ -17,7 +17,7 @@ val text = Document("""Space: the final frontier.
  to boldly go where no one has gone before!""")
 ```
 
-The simplest processing we can do here is split the document into [sentences](https://nlp.stanford.edu/nlp/javadoc/javanlp/index.html?edu/stanford/nlp/simple/Sentence.html) and a sentence into words. Note that it splits documents on punctuation like '.' and '!' if followed by a space and it retains the punctuation in the resulting sentences. It doesn't split on ',' or ':'. It splits sentences to words on whitespace and punctuation marks are included as words. With CoreNLP we can usually get a list of results with the plural form of a method e.g. `sentences()` or get a specific element with the singular form and a 0-based index e.g. `sentence(1)`. Try:
+The simplest processing we can do here is split the document into [sentences](https://nlp.stanford.edu/nlp/javadoc/javanlp/index.html?edu/stanford/nlp/simple/Sentence.html) and a sentence into words. Note that it splits documents on punctuation like '.' and '!' if followed by a space, and it retains the punctuation in the resulting sentences. It doesn't split on ',' or ':'. It splits sentences to words on whitespace and includes punctuation marks as words. With CoreNLP we can usually get a list of results with the plural form of a method e.g. `sentences()` or get a specific element with the singular form, and a 0-based index e.g. `sentence(1)`. Try:
 
 ```kotlin
 text.sentences().size
@@ -40,7 +40,7 @@ are
 
 ### Lemmas
 
-While speaking we don't always use the basic, root form of a word like "go" but other grammatically appropriate forms like "goes" or "went". The basic, root form is called [lemma](https://simple.wikipedia.org/wiki/Lemma_(linguistics)) and it's obvious from this example we can't always just take a substring of a word to find a lemma. We can easily find lemmas with CoreNLP with the `lemma()` method. For example the lemma of "are", second word of second sentence is "be":
+While speaking, we don't always use the basic, root form of a word like "go" but other grammatically appropriate forms like "goes" or "went". The basic, root form is called [lemma](https://simple.wikipedia.org/wiki/Lemma_(linguistics)), and it's obvious from this example we can't always just take a substring of a word to find a lemma. We can easily find lemmas with CoreNLP with the `lemma()` method. For example the lemma of "are", second word of second sentence is "be":
 ```kotlin
 sentence.lemma(1)
 ```
@@ -135,25 +135,25 @@ Document("""To all Starfleet personel, this is the Captain. It is my sad duty to
 ```text
 {5=CHAIN5-["this" in sentence 1, "It" in sentence 2], 21=CHAIN21-["She" in sentence 3, "Her" in sentence 4, "her" in sentence 4], 13=CHAIN13-["Starfleet" in sentence 1, "Starfleet" in sentence 3]}
 ```
-CHAIN5 is actually wrong as "this" and "It" don't refer to the same thing. The other chains are correct but it failed to spot that "She", "Her" etc are related to "Ensign Sito Jaxa".
+CHAIN5 is actually wrong as "this" and "It" don't refer to the same thing. The other chains are correct, but it failed to spot that "She", "Her" etc are related to "Ensign Sito Jaxa".
 
 ### Named Entity Recognition
 
-Apart from words like verbs and nouns a sentence may contain named entities that we should identify to extract useful information from our text. [Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition) may be unsuccessful if the entity and the related word are missing from the [corpus](https://en.wikipedia.org/wiki/Text_corpus) used to train the model that the NER tagging algorithm is using. For English, the algorithm is strongly influenced by the first letter being uppercase. CoreNLP performs NER tagging by calling the `nerTags` method:
+Apart from words like verbs and nouns a sentence may contain named entities that we should identify to extract useful information from our text. [Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition) may be unsuccessful if the entity, and the related word are missing from the [corpus](https://en.wikipedia.org/wiki/Text_corpus) used to train the model the NER tagging algorithm is using. For English, the algorithm depends a lot on the first letter being uppercase. CoreNLP performs NER tagging by calling the `nerTags` method:
 ```kotlin
 Sentence("I'm Captain Jean-Luc Picard, of the Federation Starship Enterprise").nerTags()
 ```
 ```text
 [O, O, TITLE, PERSON, PERSON, O, O, O, ORGANIZATION, ORGANIZATION, ORGANIZATION]
 ```
-"Starship" is probably more of a VEHICLE than an ORGANIZATION so the training corpus probably didn't contain this term. "Captain" would still be identified as "TITLE" even if it was typed as "captain". Another example:
+"Starship" is probably more of a VEHICLE than an ORGANIZATION, so the training corpus probably didn't contain this term. "Captain" would still be identified as "TITLE" even if it was typed as "captain". Another example:
 ```kotlin
 Sentence("Ensign Sito Jaxa has been lost in the line of duty").nerTags()
 ```
 ```text
 [PERSON, PERSON, PERSON, O, O, O, O, O, O, O, O]
 ```
-Here it successfully recognized "Sito" and "Jaxa" as names of a person despite these name being made up probably.
+Here it successfully recognized "Sito" and "Jaxa" as names of a person despite these names probably being imaginary.
 
 ### Sentiment Analysis
 
