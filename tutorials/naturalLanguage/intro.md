@@ -5,7 +5,7 @@ date: 2019-10-01 00:00:00
 layout: default
 ---
 
-Practical tutorials on analysis of plain English text i.e. [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) with the Kotlin REPL. We'll use [Stanford CoreNLP](https://stanfordnlp.github.io/CoreNLP/) and where possible its [Simple API](https://stanfordnlp.github.io/CoreNLP/simple.html) that is more appropriate for a REPL. Language models will be lazy loaded whenever you first use an algorithm that requires this model. 
+Practical tutorials on how you can use the Kotlin REPL to programmatically analyse the grammar of plain English text i.e. [Natural Language Processing](https://en.wikipedia.org/wiki/Natural_language_processing) or programmatically create text in English i.e. [Natural Language Generation](https://en.wikipedia.org/wiki/Natural_language_processing) or classify various pieces of text according to some criteria i.e. [Text Categorisation](https://en.wikipedia.org/wiki/Text_categorisation). 
 
 All text samples used here are Star Trek quotes (English not Klingon) sourced from either [Wikipedia](https://en.wikipedia.org/wiki/Star_Trek) or [Memory Alpha](http://memory-alpha.wikia.com/wiki/Portal:Main). After an entirely unscientific thought process, I decided such quotes are grammatically correct, adequately diverse and of average complexity.
 
