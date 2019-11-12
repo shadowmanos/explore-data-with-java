@@ -74,7 +74,9 @@ sentence.posTags()
 The POS tags are in the same order as words in the sentence which can be confusing. Let's use Kotlin collections features to print pairs of words with their corresponding POS tags in separate lines:
 
 ```kotlin
-sentence.posTags().zip(sentence.words()).forEach{ (pos, word) -> print("$pos\t$word\n") }
+sentence.posTags()
+    .zip(sentence.words())
+    .forEach { (pos, word) -> print("$pos\t$word\n") }
 ```
 ```text
 These      DT

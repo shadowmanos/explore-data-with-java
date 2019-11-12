@@ -13,6 +13,6 @@ Won't bore you with grammar or linguistic theory as this is written from a code 
 
 *Disclaimer*: No [tribbles](https://en.wikipedia.org/wiki/Tribble) were harmed in the making of this repository.
 
-### Recipes
+### Tutorials
 
 1. [CorenNLP Introduction](corenNLPIntro.md)
