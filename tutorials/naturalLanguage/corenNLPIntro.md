@@ -5,6 +5,11 @@ date: 2019-10-01 00:00:00
 layout: default
 ---
 
+## Core what now?
+
+[CoreNLP](https://stanfordnlp.github.io/CoreNLP/) is a Natural Language Processing library written in Java by some lovely people at Stanford University and available under a GPL or commercial license. You can build Java NLP applications with it, use it through a REST API from any language or invoke through your OS command line. CoreNLP recently introduced an alternative [Simple API](https://stanfordnlp.github.io/CoreNLP/simple.html) which is simple and concise and ideal for a REPL. Here we'll see how to use it through the Kotlin REPL!
+Steps before your start at [Works on my machine](../../worksOnMyMachine.md) and to import stuff do: `import edu.stanford.nlp.simple.*`
+
 ### Documents, sentences and words
 
 Let's start by creating a [Document](https://nlp.stanford.edu/nlp/javadoc/javanlp/index.html?edu/stanford/nlp/simple/Document.html) with appropriate sample text for starting our journey. Note that this a multi-line string, and we can type by hitting Enter and then Ctrl+Enter at the last line to execute.
