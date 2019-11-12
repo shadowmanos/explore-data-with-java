@@ -1,0 +1,13 @@
+theme: jekyll-theme-cayman
+author: Manos Nikolaidis
+twitter:
+  username: shadowmanos
+social:
+  name: Manos Nikolaidis
+  links:
+    - https://stackoverflow.com/users/1413133/manos-nikolaidis
+    - https://twitter.com/shadowmanos
+    - https://www.linkedin.com/in/manosnikolaidis
+gems:
+  - jekyll-seo-tag
+  - jekyll-sitemap
