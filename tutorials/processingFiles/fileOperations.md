@@ -5,9 +5,9 @@ date: 2019-11-01 00:00:00
 layout: default
 ---
 
-### Intro
+### Pre-filing
 
-We'll some simple one line examples on operations on file themselves without modifying contents. We'll just use standard Java and Kotlin classes.
+We'll see some simple one line examples on operations on file themselves without modifying contents. We'll just use standard Java and Kotlin classes.
 Steps before your start at [Works on my machine](../../worksOnMyMachine.md) and to import stuff do: `import java.io.*`
 
 ### List folders and files
@@ -49,7 +49,7 @@ home.walk()
     .maxDepth(1)
     .filter { f -> f.isDirectory }
     .sortedBy { f -> f.name }
-    .forEach { f -> print("${f.name}\n") }
+    .forEach { f -> print("$f.name\n") }
 ```
 
 Note that the home folder, the root of this traversal, is included.

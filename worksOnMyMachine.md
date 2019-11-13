@@ -5,9 +5,7 @@ date: 2019-08-01 00:00:00
 layout: default
 ---
 
-## Works on my machine
-
-To try the code in these tutorials on your machine you'll need JDK 1.8 or later, available as per the operating system you use, and [Jetbrains Intellij](https://www.jetbrains.com/idea/), the community edition of which can be downloaded for free from [here](https://www.jetbrains.com/idea/download). Kotlin's REPL can be used after you open a Java or Kotlin project in Intellij, and it will auto-import classes from dependencies declared in the project's pom.xml or build.gradle. So if you git clone and import in Intelij the (based on gradle) project of this github repository, it'd be easier to follow all tutorials on your machine:
+To try the code in these tutorials on your machine you'll need JDK 1.8 or later, available as per the operating system you use, and [Jetbrains Intellij](https://www.jetbrains.com/idea/), the community edition of which can be downloaded for free from [here](https://www.jetbrains.com/idea/download). Kotlin's REPL can be used after you open a Java or Kotlin project in Intellij, and it will auto-import classes from dependencies declared in the project's pom.xml or build.gradle. So if you git clone and import in Intellij the (based on gradle) project of this github repository, it'd be easier to follow all tutorials on your machine:
 
 1. In Intellij go to _File_ -> _New_ -> _Project from version control_ -> _Git_, and put this URL:
 
