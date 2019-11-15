@@ -5,7 +5,14 @@ date: 2019-11-01 00:00:00
 layout: default
 ---
 
-Practical tutorials on how you can use the Kotlin REPL to programmatically manage and modify files and folders. You may want to perform operation on the files itself like copy, move, rename or delete. Simple operations on the file's contents like append or delete lines of text. Perhaps more importantly, invoke a method on each line or other part of the file or store the results of some calculations. The standard functionality coming with Kotlin is enough for such operations, and the API is easy to use from a REPL. Some other external libraries will be employed to parse files in specific formats like JSON.
+Practical tutorials on programmatically and interactively managing and modifying files and folders with the Kotlin REPL. Unbeknownst to outsiders, this is a big part of data science work! You may want to perform:
+ 
+ 1. an operation on the file itself like copy, move, rename or delete.
+ 2. an operation on the file's contents like append or delete lines of text.
+ 3. invoke a data processing method on each line of a text or chunk of a binary file.
+ 4. read or write files in JSON, YAML, XML, HTML, CSV etc formats employing temporary data structures.
+  
+The functionality of standard Kotlin and Java libraries is enough for most of these operations, and the API is easy to use from a REPL. [Jackson](https://github.com/FasterXML/jackson) will be used to parse files in specific formats like JSON.
 
 ### Tutorials
 
