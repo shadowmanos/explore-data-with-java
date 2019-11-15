@@ -28,18 +28,29 @@ home.walk()
     .forEach { n -> print("$f.name\n") }
 ``` 
 
-Experiment with arguments above to get more desirable results.
+[home.walk()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/walk.html) will perform depth-first traversal. You can use [home.walkBottomUp()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/walk-bottom-up.html) for breadth-first.
 
 To recursively search for files by name and type and get the absolutePath, try the following:
 
 ```kotlin
 home.walk()
     .filter { f -> f.isFile }
-    .filter { f -> f.name.startsWith("travels")}
-    .filter { f -> f.name.endsWith("txt")}
+    .filter { f -> f.nameWithoutExtension == "someText"}
+    .filter { f -> f.extension =="txt"}
     .first()
     .absolutePath
     
+```
+
+Or you could filter by `f.name == "someText.txt""` for same result.
+
+Note that with `first()` you can get a new `File` representing a folder, and use it as a basis for future searches:
+
+```kotlin
+val docs = home.walk()
+    .filter { f -> f.isDirectory }
+    .filter { f -> f.name == "Documents"}
+    .first()
 ```
 
 You may list folders sorted by name like this:
@@ -54,14 +65,81 @@ home.walk()
 
 Note that the home folder, the root of this traversal, is included.
 
-`home.walk()` will perform depth-first traversal. You can use `home.walkBottomUp()` for breadth-first.
-
 We may want to filter files per the parent folder. For example count Kotlin source files in a multi-project source code folder. We expect them to be in folders like: `src/main/kotlin`.
 
 ```kotlin
 home.walk()
     .filter { f -> f.isFile }
-    .filter { f -> f.name.endsWith("kt")}
-    .filter { f -> f.parent.endsWith == "src/main/kotlin"}
+    .filter { f -> f.extension == "kt"}
+    .filter { f -> f.parent.endsWith("src/main/kotlin")}
     .count()
+```
+
+### Size matters
+
+To get the size of a file:
+
+```kotlin
+someFile.length()
+```
+
+The above is not useful for folders. To get the size of all files in a folder we need iteration:
+
+```kotlin
+home.walk()
+    .maxDepth(1)
+    .filter { f -> f.isFile }
+    .map { f -> f.length() }
+    .sum()
+```
+
+From any file, you can get usage and size information for the whole disk:
+
+```kotlin
+home.freeSpace
+home.usableSpace
+home.totalSpace
+```
+
+Expect `usableSpace` to be less than `freeSpace`
+
+### Modify files
+
+To create a new empty folder:
+
+```kotlin
+val someFolder = docs.resolve("someFolder")
+someFolder.mkdir()
+```
+
+To create a new empty file:
+
+```kotlin
+val someText = someFolder.resolve("someText.txt")
+someText.createNewFile()
+```
+
+you can chain two `resolve` calls, but you have to create a folder before creating a file within it.
+
+We can rename/move a file by:
+
+```kotlin
+val movedFile = docs.resolve("someFileMovedToDocs.txt")
+someText.renameTo(movedFile)
+```
+
+This method take a `File` argument and since the file is under a different folder, it was moved as well as renamed. So it's similar to Unix [mv](https://en.wikipedia.org/wiki/Mv) command. If you now type `someText` to inspect the variable, you'll see it still refers to original path `Documents/someFolder/someText.txt` that no longer exists. Consequently, if you try to rename `someText` again it will fail and return `kotlin.Boolean = false`.
+
+If we wanted to copy instead, keeping the original file:
+
+```kotlin
+val copiedFile = someText.copyTo(docs.resolve("someFolder/copyOfSomeText.txt"))
+```
+
+which, unlike previous methods, returns a `File` instead of boolean.
+
+If you regret copying the file, to get rid of it:
+
+```kotlin
+copiedFile.delete()
 ```
