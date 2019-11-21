@@ -71,12 +71,12 @@ sentence.posTags()
 [DT, VBP, DT, NNS, IN, DT, NN, NN, .]
 ```
 
-The POS tags are in the same order as words in the sentence which can be confusing. Let's use Kotlin collections features to print pairs of words with their corresponding POS tags in separate lines:
+The POS tags are in the same order as words in the sentence, which can be confusing. Let's use Kotlin collections features to print pairs of words with their corresponding POS tags in separate lines:
 
 ```kotlin
-sentence.posTags()
-    .zip(sentence.words())
-    .forEach { (pos, word) -> print("$pos\t$word\n") }
+sentence.words()
+    .zip(sentence.posTags())
+    .forEach { (word, pos) -> print("$word\t$pos\n") }
 ```
 ```text
 These      DT

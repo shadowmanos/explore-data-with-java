@@ -11,7 +11,7 @@ To try the code in these tutorials on your machine you'll need JDK 1.8 or later,
 
 `https://github.com/shadowmanos/explore-data-with-kotlin-repl.git`
 
-2. After it's open, gradle has finished downloading half the internet and Intellij has done its thing, go the project view on the left pane, expand and highlight the _main_ module inside the _src_ folder and choose from menu _Tools_ -> _Kotlin_ -> _Kotlin REPL_. On the pane that opens, start typing code from the examples in this cookbook and (only) if you autocomplete the necessary classes will be auto imported while typing. Alternatively, there is a list of import statements at the first paragraph of each tutorial and if you copy and paste it into the REPL you can then copy and paste each line of code without bothering with autocomplete.
+2. After it's open, gradle has finished downloading half the internet and Intellij has done its thing, go the project view on the left pane, expand and highlight the _main_ module inside the _src_ folder and choose from menu _Tools_ -> _Kotlin_ -> _Kotlin REPL_. On the pane that opens, start typing code from the examples in this cookbook and (only) if you autocomplete the necessary classes will be auto imported while typing. Alternatively, there is a list of import statements at the first paragraph of each tutorial and if you copy and paste it into the REPL you can then copy and paste each line of code without bothering with autocomplete. For these import statements to work, you still need to highlight the main module in the left pane.
  
 You may continue reading blog posts online on github or open the markdown files in the _tutorials_ folder and Intellij will render them with its Markdown plugin. You can navigate to links by clicking if your are viewing in preview mode or Ctrl + Click in edit mode.
 
@@ -39,4 +39,4 @@ Tips:
    val text = "a" + "b"
    ```
    or you may recall a result by the auto-assigned name like `res1`
-7. `println` in iterations doesn't seem to work, so we'll use something like `print("text\n")`
+7. `println` in iterations doesn't seem to add a new line, so we'll use something like `print("text\n")`

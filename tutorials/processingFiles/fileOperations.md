@@ -7,7 +7,7 @@ layout: default
 
 ### Pre-filing
 
-We'll see some simple one line examples on operations on file themselves without modifying contents. We'll just use standard Java and Kotlin classes.
+We'll see some simple one line examples on operations on files themselves without modifying contents. We'll just use standard Java and Kotlin classes.
 Steps before your start at [Works on my machine](../../worksOnMyMachine.md) and to import stuff do: `import java.io.*`
 
 ### List folders and files
@@ -83,7 +83,7 @@ To get the size of a file:
 someFile.length()
 ```
 
-The above is not useful for folders. To get the size of all files in a folder we need iteration:
+The above is not useful for folders. To get the size of all files in a folder we need to iterate over them:
 
 ```kotlin
 home.walk()
