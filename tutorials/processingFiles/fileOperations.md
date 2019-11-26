@@ -25,7 +25,7 @@ home.walk()
     .maxDepth(1)
     .filter { f -> f.isFile }
     .filter { f -> !f.isHidden }
-    .forEach { n -> print("$f.name\n") }
+    .forEach { f -> print("${f.name}\n") }
 ``` 
 
 [home.walk()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/walk.html) will perform depth-first traversal. You can use [home.walkBottomUp()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/walk-bottom-up.html) for breadth-first.
@@ -60,7 +60,7 @@ home.walk()
     .maxDepth(1)
     .filter { f -> f.isDirectory }
     .sortedBy { f -> f.name }
-    .forEach { f -> print("$f.name\n") }
+    .forEach { f -> print("${f.name}\n") }
 ```
 
 Note that the home folder, the root of this traversal, is included.
